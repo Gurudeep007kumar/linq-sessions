@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoundationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FoundationModelStoreContainer">
+    <EntitySet Name="Candidates" EntityType="FoundationModel.Store.Candidates" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Candidates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Pin" Type="nvarchar" MaxLength="15" />
+    <Property Name="ConstraintDescript" Type="nvarchar(max)" />
+    <Property Name="Domicile_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Graduation_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonalConstraint_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Preference_Code" Type="int" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+</Schema>

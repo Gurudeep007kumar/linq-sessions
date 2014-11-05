@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoundationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FoundationEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Candidates" EntityType="FoundationModel.Candidate" />
+  </EntityContainer>
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Pin" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="ConstraintDescript" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Domicile_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Graduation_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PersonalConstraint_Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Preference_Code" Type="Int32" />
+    <Property Name="Alias" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

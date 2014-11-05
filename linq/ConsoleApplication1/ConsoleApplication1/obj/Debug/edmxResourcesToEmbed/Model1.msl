@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FoundationModelStoreContainer" CdmEntityContainer="FoundationEntities">
+    <EntitySetMapping Name="Candidates">
+      <EntityTypeMapping TypeName="FoundationModel.Candidate">
+        <MappingFragment StoreEntitySet="Candidates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="ConstraintDescript" ColumnName="ConstraintDescript" />
+          <ScalarProperty Name="Domicile_Name" ColumnName="Domicile_Name" />
+          <ScalarProperty Name="Graduation_Name" ColumnName="Graduation_Name" />
+          <ScalarProperty Name="PersonalConstraint_Code" ColumnName="PersonalConstraint_Code" />
+          <ScalarProperty Name="Preference_Code" ColumnName="Preference_Code" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

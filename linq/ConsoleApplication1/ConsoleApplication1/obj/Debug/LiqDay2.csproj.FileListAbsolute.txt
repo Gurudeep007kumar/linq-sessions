@@ -1,0 +1,8 @@
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\bin\Debug\EntityFramework.dll
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\bin\Debug\EntityFramework.xml
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\obj\Debug\LiqDay2.csprojResolveAssemblyReference.cache
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\GitHub\enggacademy\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
