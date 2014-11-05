@@ -8,6 +8,22 @@ namespace ConsoleApplication1
 {
     class Program
     {
+        public class Student
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+            public List<Contact> Contacts { get; set; }
+        }
+        public class Contact
+        {
+
+        }
+        //this function would be consumed by one of the where clauses
+        // a very simple function that just takes in the person and checks to see if the person's age is valid
+        public static bool IsValidPerson(Student s)
+        {
+          return  s.Age >0 ?  true : false;
+        }
         static void Main(string[] args)
         {
             //Language Integrate Query (LINQ)
@@ -18,7 +34,7 @@ namespace ConsoleApplication1
                           select n);
             //lazy loading of the linq query is actually a benefit 
             //unless we loop around to yeild the result we are not loading the memory here
-            foreach (var item in result) 
+            foreach (var item in result)
             {
                 Console.WriteLine(item);
 
@@ -30,8 +46,8 @@ namespace ConsoleApplication1
             // we want all the integers that are greater than 2
             int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
             var numbersResult = from i in numbers
-                         where i <= 2
-                         select i;
+                                where i <= 2
+                                select i;
             Array.ForEach<int>(numbersResult.ToArray<int>(), n => Console.WriteLine(n));
             Console.ReadLine();
 
@@ -61,6 +77,14 @@ namespace ConsoleApplication1
                                 select new { Alias = s.Name };
             Array.ForEach(studentResult.ToArray(), s => Console.WriteLine(s.Alias));
             Console.ReadLine();
+            //we can also use the predicate and call the custom function in place of the simple where statements. 
+            Predicate<Student> predic = IsValidPerson;
+
+            var resultUsingPredicate = (from s in students
+                                        select s).Where(s=>predic.Invoke(s));
+
+            Array.ForEach<Student>(resultUsingPredicate.ToArray<Student>(), s => Console.WriteLine(s.Name));
+            Console.ReadLine();
 
             //cascaded objects
             var contacts = from s in students
@@ -81,8 +105,8 @@ namespace ConsoleApplication1
             // ....
             //Pagination and skipping results from the top
             var myResult = (from n in names
-                          orderby n //this statement is vital when it comes to skipping. If missing the entire thing will not work
-                          select n).Distinct<string>().Skip<string>(1).Take<string>(2);
+                            orderby n //this statement is vital when it comes to skipping. If missing the entire thing will not work
+                            select n).Distinct<string>().Skip<string>(1).Take<string>(2);
             Array.ForEach<string>(myResult.ToArray<string>(), r => Console.WriteLine(r));
             Console.ReadLine();
 
@@ -99,7 +123,7 @@ namespace ConsoleApplication1
                             join t in tutors on n equals t
                             select n;
 
-            Array.ForEach<string>(innerJoin.ToArray<string>(),i=>Console.WriteLine(i));
+            Array.ForEach<string>(innerJoin.ToArray<string>(), i => Console.WriteLine(i));
             Console.ReadLine();
 
             var orderedNames = from n in names
@@ -124,14 +148,6 @@ namespace ConsoleApplication1
         }
     }
 
-    public class Student
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public List<Contact> Contacts { get; set; }
-    }
-    public class Contact
-    {
-        
-    }
+
+
 }
