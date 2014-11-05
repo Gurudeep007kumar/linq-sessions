@@ -129,11 +129,14 @@ namespace ConsoleApplication1
             var orderedNames = from n in names
                                orderby n
                                select n;
+            //this is a an regular means of doing things
             foreach (var item in orderedNames)
             {
                 Console.WriteLine(item);
             } Console.ReadLine();
-
+            //but here is a whacky way of doing this.
+            Array.ForEach<string>(orderedNames.ToArray<string>(), n=>Console.Writeline(n));
+            Console.ReadLine();
             int[] anotherNumberSet = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
             var orderedResult = from i in numbers
